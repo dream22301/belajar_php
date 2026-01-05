@@ -1,0 +1,12 @@
+<?php
+
+require 'db2.php';
+
+$stmt = $pdo->query("SELECT * FROM users");
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+    echo $user['id'] . " - " . $user['nama'] . " - " . $user['email'] . "<br>";
+}
+
+?>
